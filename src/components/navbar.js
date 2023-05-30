@@ -4,9 +4,10 @@ import bars from './../../public/bars.svg';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import SearchBar from './searchbar';
+import Link from 'next/link';
 
 export default function Navbar() {
-  const [booleanMenu, setbooleanMenu] = useState(true);
+  const [booleanMenu, setbooleanMenu] = useState(false);
 
   function mobileButton() {
     setbooleanMenu((prev) => !prev);
@@ -18,7 +19,7 @@ export default function Navbar() {
       <div className="font-bold ">
         <h2>E-commerce App</h2>
       </div>
-      <SearchBar/>
+      <SearchBar />
       <nav>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between">
@@ -90,39 +91,8 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
-      {/* <nav>
-        <div className="md:hidden flex items-center">
-          <button className="outline-none mobile-menu-button">
-            <svg
-              className="w-6 h-6 text-gray-500"
-              x-show="!showMenu"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-        <ul className="flex gap-4">
-          <li>
-            <a href="#">list item</a>
-          </li>
-          <li>
-            <a href="#">list item</a>
-          </li>
-          <li>
-            <a href="#">list item</a>
-          </li>
-          <li>
-            <a href="#">list item</a>
-          </li>
-        </ul>
-      </nav> */}
-      <div className="flex p-5">
+
+      <div className="flex p-5 justify-center content-center">
         <Image src={heart} alt="heart icon" width={37} height={37}></Image>
 
         <Image src={cart} alt="cart icon" width={50} height={50}></Image>
