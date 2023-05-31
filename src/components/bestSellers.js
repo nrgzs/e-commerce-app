@@ -15,16 +15,15 @@ export default function Bestsellers() {
   return (
     <div className="flex flex-col justify-center items-center mx-20 my-10 ">
       <h2 className="font-bold text-2xl ">BestSellers</h2>
-      <div className=''>
+      <div className="">
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          slidesPerView={1}
+          slidesPerView={5}
           spaceBetween={10}
-          width={800}
           breakpoints={{
             576: {
-              spaceBetween: 0,
+              spaceBetween: 5,
               slidesPerView: 2,
             },
             // when window width is >= 768px
@@ -43,13 +42,13 @@ export default function Bestsellers() {
             },
           }}
           /*  loop={true} */
-          navigation={true}
+          navigation
           pagination={{ clickable: true }}
           /* scrollbar={{ draggable: true }} */
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          <SwiperSlide >
+          <SwiperSlide>
             <Card
               img={pic}
               title={'product num 1'}
