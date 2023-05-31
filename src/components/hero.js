@@ -19,6 +19,7 @@ export default function Hero() {
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       slidesPerView={1}
+      
       loop={true}
       autoplay={{
         delay: 5000,

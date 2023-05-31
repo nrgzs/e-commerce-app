@@ -1,0 +1,110 @@
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Image from 'next/image';
+import pic from '../../public/image.png';
+import Card from './card';
+
+export default function Bestsellers() {
+  return (
+    <div className="flex flex-col justify-center items-center mx-20 my-10 ">
+      <h2 className="font-bold text-2xl ">BestSellers</h2>
+      <div className=''>
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          slidesPerView={1}
+          spaceBetween={10}
+          width={800}
+          breakpoints={{
+            576: {
+              spaceBetween: 0,
+              slidesPerView: 2,
+            },
+            // when window width is >= 768px
+            768: {
+              spaceBetween: 10,
+              slidesPerView: 3,
+            },
+            // when window width is >= 1024px
+            1024: {
+              spaceBetween: 10,
+              slidesPerView: 4,
+            },
+            1280: {
+              spaceBetween: 10,
+              slidesPerView: 5,
+            },
+          }}
+          /*  loop={true} */
+          navigation={true}
+          pagination={{ clickable: true }}
+          /* scrollbar={{ draggable: true }} */
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+        >
+          <SwiperSlide >
+            <Card
+              img={pic}
+              title={'product num 1'}
+              description={'tgyhujikjh wertyuiocvbnm'}
+              price={467}
+              rating={4.5}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              img={pic}
+              title={'product num 1'}
+              description={'tgyhujikjh wertyuiocvbnm'}
+              price={467}
+              rating={4.5}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              img={pic}
+              title={'product num 1'}
+              description={'tgyhujikjh wertyuiocvbnm'}
+              price={467}
+              rating={4.5}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              img={pic}
+              title={'product num 1'}
+              description={'tgyhujikjh wertyuiocvbnm'}
+              price={467}
+              rating={4.5}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              img={pic}
+              title={'product num 1'}
+              description={'tgyhujikjh wertyuiocvbnm'}
+              price={467}
+              rating={4.5}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card
+              img={pic}
+              title={'product num 1'}
+              description={'tgyhujikjhwertyuiocvbnm'}
+              price={467}
+              rating={4.5}
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
+  );
+}

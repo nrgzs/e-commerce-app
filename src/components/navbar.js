@@ -60,7 +60,7 @@ export default function Navbar() {
 
         <div
           className={
-            booleanMenu ? 'absolute top-20 bg-slate-300 w-[200px]' : 'hidden'
+            booleanMenu ? 'absolute top-20 bg-slate-300 w-[200px] z-30' : 'hidden'
           }
         >
           <ul className="">
