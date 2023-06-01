@@ -1,4 +1,4 @@
-import CategorieCart from "./categorieCart"
+import CategoryCart from "./categoryCart"
 
 const categories=['bag', 'electronic', 'clothing', 'headphones', 'accessories', 'planes']
 
@@ -9,7 +9,7 @@ export default function TopCategories(){
         <h2 className=" text-2xl">Top Categories</h2>
         <div className="flex flex-wrap justify-center gap-2">
           {categories.map((cat) => {
-            return <CategorieCart categorie={cat} />;
+            return <CategoryCart key={cat} category={cat} />;
           })}
         </div>
       </div>

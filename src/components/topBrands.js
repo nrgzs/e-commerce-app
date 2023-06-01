@@ -19,7 +19,7 @@ export default function TopBrands() {
       <h2 className='font-bold  text-2xl'>Top Brands</h2>
       <div className='flex flex-wrap gap-3 justify-center'>
         {Data.map((br) => {
-          return <BrandCart brand={br.brand} logo={br.logo} />;
+          return <BrandCart key={br.brand} brand={br.brand} logo={br.logo} />;
         })}
       </div>
     </div>

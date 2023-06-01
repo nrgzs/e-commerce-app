@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,12 +15,12 @@ export default function Bestsellers() {
   return (
     <div className="flex flex-col justify-center items-center mx-20 my-10 ">
       <h2 className="font-bold text-2xl ">BestSellers</h2>
-      <div className="">
+      <div className="container sm">
         <Swiper
           // install Swiper modules
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          slidesPerView={5}
-          spaceBetween={10}
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          slidesPerView={1}
+          spaceBetween={5}
           breakpoints={{
             576: {
               spaceBetween: 5,
