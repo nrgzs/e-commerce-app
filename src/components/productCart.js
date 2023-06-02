@@ -6,7 +6,7 @@ export default function Card({ img, title, price, description, rating }) {
     <>
       <div className=" flex flex-col relative gap-1 p-2 w-48 h-96 border-2 border-gray-300 rounded-md">
         <div>
-          <Image src={img} alt="product img"></Image>
+          <Image src={img} alt="product img" width={180} height={250}></Image>
           <div className="absolute top-2 right-3 bg-white bg-opacity-70 rounded-full p-1 ">
             <Image src={save} alt="star icon"></Image>
           </div>
