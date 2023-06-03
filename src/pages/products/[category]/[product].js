@@ -1,3 +1,4 @@
+import AddToCartBtn from '@/components/addToCartBtn';
 import Image from 'next/image';
 
 Image;
@@ -19,7 +20,7 @@ export default function CategoriePage({ item }) {
           <p>{item.rating}</p>
           <p>{item.stock}</p>
         </div>
-        <button>Add to Card</button>
+        <AddToCartBtn />
       </div>
     </>
   );

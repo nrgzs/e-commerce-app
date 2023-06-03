@@ -9,9 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Image from 'next/image';
 import pic from '../../public/image.png';
-import Card from './card';
+import Card from './productCart';
 
-export default function Bestsellers() {
+export default function Bestsellers({ data }) {
   return (
     <div className="flex flex-col justify-center items-center mx-20 my-10 ">
       <h2 className="font-bold text-2xl ">BestSellers</h2>
@@ -48,60 +48,19 @@ export default function Bestsellers() {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          <SwiperSlide>
-            <Card
-              img={pic}
-              title={'product num 1'}
-              description={'tgyhujikjh wertyuiocvbnm'}
-              price={467}
-              rating={4.5}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              img={pic}
-              title={'product num 1'}
-              description={'tgyhujikjh wertyuiocvbnm'}
-              price={467}
-              rating={4.5}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              img={pic}
-              title={'product num 1'}
-              description={'tgyhujikjh wertyuiocvbnm'}
-              price={467}
-              rating={4.5}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              img={pic}
-              title={'product num 1'}
-              description={'tgyhujikjh wertyuiocvbnm'}
-              price={467}
-              rating={4.5}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              img={pic}
-              title={'product num 1'}
-              description={'tgyhujikjh wertyuiocvbnm'}
-              price={467}
-              rating={4.5}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card
-              img={pic}
-              title={'product num 1'}
-              description={'tgyhujikjhwertyuiocvbnm'}
-              price={467}
-              rating={4.5}
-            />
-          </SwiperSlide>
+          {data.map((item) => {
+            return (
+              <SwiperSlide>
+                <Card
+                  img={item.images[0]}
+                  title={item.title}
+                  description={item.description}
+                  price={item.price}
+                  rating={item.rating}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>
