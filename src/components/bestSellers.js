@@ -50,7 +50,7 @@ export default function Bestsellers({ data }) {
         >
           {data.map((item) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={item.id}>
                 <Card
                   img={item.images[0]}
                   title={item.title}

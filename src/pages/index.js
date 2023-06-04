@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
     }
   });
   const bestsellersTrim = bestSellers.slice(0, 15);
-  console.log(bestsellersTrim);
+
   return {
     props: { bestsellersTrim },
   };

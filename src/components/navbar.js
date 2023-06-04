@@ -6,12 +6,13 @@ import { useRef, useState } from 'react';
 import SearchBar from './searchbar';
 import Link from 'next/link';
 
+
+
 export default function Navbar() {
   const [booleanMenu, setbooleanMenu] = useState(false);
 
   function mobileButton() {
     setbooleanMenu((prev) => !prev);
-    console.log(booleanMenu);
   }
 
   return (
@@ -60,7 +61,9 @@ export default function Navbar() {
 
         <div
           className={
-            booleanMenu ? 'absolute top-20 bg-slate-300 w-[200px] z-30' : 'hidden'
+            booleanMenu
+              ? 'absolute top-20 bg-slate-300 w-[200px] z-30'
+              : 'hidden'
           }
         >
           <ul className="">
