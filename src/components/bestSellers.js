@@ -52,6 +52,7 @@ export default function Bestsellers({ data }) {
             return (
               <SwiperSlide key={item.id}>
                 <Card
+                id={item.id}
                   img={item.images[0]}
                   title={item.title}
                   description={item.description}

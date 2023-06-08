@@ -6,16 +6,20 @@ import {
   increase,
   decrease,
   calculateTotal,
-} from '@/features/cart/cartSlice';
+  getCartItems
+} from '@/redux/cart/cartSlice';
 import { useEffect } from 'react';
 
 export default function () {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
-
+  const cartItems = useSelector(getCartItems)
+  console.log(cartItems);
   useEffect(() => {
     dispatch(calculateTotal());
-  }, [cart.cartItems]);
+  }, [cartItems]);
+
+  
 
   return (
     <div>
@@ -23,7 +27,7 @@ export default function () {
       <p>items in your bag : {cart.amount}</p>
       <p> TOTAL : {cart.total.toFixed(2)}</p>
       <div>
-        {cart.cartItems.map((item) => {
+        {cartItems.map((item) => {
           return (
             <div key={item.id}>
               {' '}
@@ -49,8 +53,9 @@ export default function () {
               </button>
               <button
                 onClick={() => {
-                    if(item.amount>1){
-                  dispatch(decrease(item.id));}
+                  if (item.amount > 1) {
+                    dispatch(decrease(item.id));
+                  }
                 }}
                 className=" bg-orange-400 p-2 m-2"
               >

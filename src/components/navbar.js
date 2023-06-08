@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="font-bold ">
         <h2>E-commerce App</h2>
       </div>
-      <SearchBar />
+     {/*  <SearchBar /> */}
       <nav>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between">
@@ -52,7 +52,7 @@ export default function Navbar() {
                 <Image
                   src={bars}
                   alt="bars icon"
-                  className="w-6 h-6 text-gray-500 hover:text-blue-500"
+                  className=" w-32  h-6 text-gray-500 hover:text-blue-500"
                 ></Image>
               </button>
             </div>

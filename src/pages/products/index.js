@@ -5,7 +5,7 @@ export default function CategoriePage({ data }) {
     <>
       <div className="main">
         <h2>All categories</h2>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 justify-center items-center content-center">
           {data.map((c) => {
             return <CategoryCart key={c} category={c} />;
           })}

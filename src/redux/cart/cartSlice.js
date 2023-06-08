@@ -8,7 +8,7 @@ const itemseWithAmount = testitems.map((product) => {
 });
 
 const initialState = {
-  cartItems: itemseWithAmount,
+  cartItems: [],
   amount: 0,
   total: 0,
   isLoading: true,
@@ -18,6 +18,10 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    addToCart: (state, action) => {
+      state.cartItems.push(action.payload);
+    },
+
     clearCart: (state) => {
       state.cartItems = [];
     },
@@ -47,21 +51,30 @@ const cartSlice = createSlice({
       }
     },
     calculateTotal: (state, action) => {
-        let amount = 0
-        let total = 0
-        state.cartItems.forEach((item) => {
-            amount += item.amount
-            total += item.amount * item.price
-        })
-        state.total = total
-        state.amount = amount
+      let amount = 0;
+      let total = 0;
+      state.cartItems.forEach((item) => {
+        amount += item.amount;
+        total += item.amount * item.price;
+      });
+      state.total = total;
+      state.amount = amount;
     },
   },
 });
 
 //console.log(cartSlice);
 
-export const { clearCart, removeItem, addAmount, increase, decrease ,calculateTotal} =
-  cartSlice.actions;
+export const {
+  clearCart,
+  removeItem,
+  addAmount,
+  increase,
+  decrease,
+  calculateTotal,
+  addToCart,
+} = cartSlice.actions;
+
+export const getCartItems = (state)=>state.cart
 
 export default cartSlice.reducer;

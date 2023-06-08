@@ -3,20 +3,22 @@ import Card from '@/components/productCart';
 export default function CategoriePage({ items, category }) {
   return (
     <>
-      <h2>{category} page</h2>
+      <div className=' text-center'>
+        <h2>{category} page</h2>
 
-      <div className="flex flex-wrap">
-        {items.map((item) => {
-          return (
-            <Card
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              img={item.images[0]}
-              rating={item.rating}
-            />
-          );
-        })}
+        <div className="flex flex-wrap justify-center">
+          {items.map((item) => {
+            return (
+              <Card
+                title={item.title}
+                price={item.price}
+                description={item.description}
+                img={item.images[0]}
+                rating={item.rating}
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );
