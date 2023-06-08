@@ -6,28 +6,29 @@ import {
   increase,
   decrease,
   calculateTotal,
-  getCartItems
 } from '@/redux/cart/cartSlice';
 import { useEffect } from 'react';
 
 export default function () {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
-  const cartItems = useSelector(getCartItems)
-  console.log(cartItems);
+
   useEffect(() => {
+    console.log(cart.cartItems);
     dispatch(calculateTotal());
-  }, [cartItems]);
+  }, [cart]);
+
+ 
 
   
 
   return (
     <div>
       <h2>Your Bag</h2>
-      <p>items in your bag : {cart.amount}</p>
-      <p> TOTAL : {cart.total.toFixed(2)}</p>
+       <p>items in your bag : {cart.amount}</p>
+      <p> TOTAL : {cart.total}</p> 
       <div>
-        {cartItems.map((item) => {
+        {cart.cartItems.map((item) => {
           return (
             <div key={item.id}>
               {' '}
