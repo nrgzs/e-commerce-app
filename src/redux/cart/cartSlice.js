@@ -19,7 +19,18 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.cartItems = [...state.cartItems, action.payload];
+      const newItem = action.payload;
+      const itemInCart = state.cartItems.find((item) => item.id === newItem.id);
+
+      if (!itemInCart) {
+        state.cartItems.push({ ...newItem, amount: 1 });
+      } else {
+        state.cartItems.map((item) =>
+          item.id === newItem.id
+            ? { ...newItem, amount: item.amount + 1 }
+            : item
+        );
+      }
     },
 
     clearCart: (state) => {

@@ -14,7 +14,7 @@ export default function () {
   const cart = useSelector((store) => store.cart);
 
   useEffect(() => {
-    console.log(cart.cartItems);
+  
     dispatch(calculateTotal());
   }, [cart]);
 
