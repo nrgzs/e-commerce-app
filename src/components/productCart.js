@@ -30,7 +30,7 @@ export default function Card({ id, img, title, price, description, rating }) {
             </div>
           </div>
         </div>
-        <AddToCartBtn id={id} />
+       
       </div>
     </>
   );
