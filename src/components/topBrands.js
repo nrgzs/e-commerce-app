@@ -13,13 +13,13 @@ const Data = [
   { brand: 'react', logo: reacticon },
 ];
 
-export default function TopBrands() {
+export default function TopBrands({data}) {
   return (
     <div className=" m-10 flex flex-col justify-center align-middle text-center">
       <h2 className='font-bold  text-2xl'>Top Brands</h2>
       <div className='flex flex-wrap gap-3 justify-center'>
-        {Data.map((br) => {
-          return <BrandCart key={br.brand} brand={br.brand} logo={br.logo} />;
+        {data.map((br) => {
+          return <BrandCart key={br.brand} brand={br} />;
         })}
       </div>
     </div>

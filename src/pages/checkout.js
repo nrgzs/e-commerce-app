@@ -9,7 +9,7 @@ import {
 } from '@/redux/cart/cartSlice';
 import { useEffect } from 'react';
 
-export default function () {
+export default function CartPage() {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
 
@@ -77,3 +77,4 @@ export default function () {
     </div>
   );
 }
+

@@ -52,17 +52,15 @@ export default function Bestsellers({ data }) {
           {data.map((item) => {
             return (
               <SwiperSlide key={item.id}>
-                <div>
-                  <Card
-                    id={item.id}
-                    img={item.images[0]}
-                    title={item.title}
-                    description={item.description}
-                    price={item.price}
-                    rating={item.rating}
-                  />
-                  <AddToCartBtn item={item} />
-                </div>
+                <Card
+                  category={`products/${item.category}`}
+                  id={item.id}
+                  img={item.images[0]}
+                  title={item.title}
+                  description={item.description}
+                  price={item.price}
+                  rating={item.rating}
+                />
               </SwiperSlide>
             );
           })}

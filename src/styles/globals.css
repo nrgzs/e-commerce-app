@@ -14,15 +14,16 @@ body {
 .hero {
   background-repeat: no-repeat;
   height: 60vh;
-  background-size: cover;
+  background-size:cover,
+  
 }
 
 .hero-1 {
-  background-image: url(./../../public/hero1.jpg);
+  background-image: url(./../../public/heroimg3.jpg);
 }
 .hero-2 {
-  background-image: url(./../../public/hero2.jpg);
+  background-image: url(./../../public/heroimg2.jpg);
 }
 .hero-3 {
-  background-image: url(./../../public/hero3.jpg);
+  background-image: url(./../../public/heroimg1.jpg);
 }

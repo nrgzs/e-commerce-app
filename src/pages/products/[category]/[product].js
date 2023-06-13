@@ -20,7 +20,7 @@ export default function CategoriePage({ item }) {
           <p>{item.rating}</p>
           <p>{item.stock}</p>
         </div>
-        <AddToCartBtn item={item} />
+        <AddToCartBtn id={item.id} />
       </div>
     </>
   );

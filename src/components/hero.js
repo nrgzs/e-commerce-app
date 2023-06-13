@@ -1,6 +1,6 @@
-import hero1 from './../../public/hero1.jpg';
-import hero2 from '../../public/hero2.jpg';
-import hero3 from '../../public/hero2.jpg';
+import hero1 from './../../public/heroimg1.jpg';
+import hero2 from '../../public/heroimg2.jpg';
+import hero3 from '../../public/heroimg2.jpg';
 
 import {
   Navigation,
@@ -27,7 +27,6 @@ export default function Hero() {
       // install Swiper modules
       modules={[Navigation, EffectFade, Pagination, Scrollbar, A11y, Autoplay]}
       slidesPerView={1}
-      
       effect={'fade'}
       loop={true}
       autoplay={{
@@ -40,18 +39,18 @@ export default function Hero() {
       onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
-        <div className="hero hero-1 text-gray-200 text-center font-bold text-3xl ">
-          HERO SECTION 1
+        <div className="hero hero-1 text-gray-200 text-center font-bold text-3xl relative">
+          <p className='absolute   w-72 top-1/3 drop-shadow-md'>Lorem ipsum dolor sit amet</p>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="hero hero-2 text-gray-200 text-center font-bold text-3xl ">
-          HERO SECTION 2
+          <p className='absolute   w-72 top-1/3 drop-shadow-md'>Sed ut perspiciatis unde omnis iste</p>
         </div>
       </SwiperSlide>
       <SwiperSlide>
         <div className="hero hero-2 text-gray-200 text-center font-bold text-3xl">
-          HERO SECTION 3
+          <p className='absolute   w-72 top-1/3 drop-shadow-md'>Et exercitationem perferendis id voluptas</p>
         </div>
       </SwiperSlide>
     </Swiper>
