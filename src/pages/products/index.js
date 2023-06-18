@@ -1,12 +1,14 @@
+import BrandCart from '@/components/brandCart';
 import CategoryCart from '@/components/categoryCart';
 
-export default function CategoriePage({ data }) {
+export default function CategoriePage({ categories, brands }) {
   return (
     <>
       <div className="main">
-        <h2>All categories</h2>
+        <h2>All Products</h2>
+        <h2>categories</h2>
         <div className="flex flex-wrap gap-4 justify-center items-center content-center">
-          {data.map((c) => {
+          {categories.map((c) => {
             return <CategoryCart key={c} category={c} />;
           })}
         </div>
@@ -17,14 +19,15 @@ export default function CategoriePage({ data }) {
 
 export async function getServerSideProps(context) {
   const { products } = await import('../../../data/products.json');
-  const data = new Set([]);
+  const dataCategories = new Set([]);
+
   products.map((p) => {
-    data.add(p.category);
+    dataCategories.add(p.category);
   });
 
   return {
     props: {
-      data: Array.from(data),
+      categories: Array.from(dataCategories),
     },
   };
 }

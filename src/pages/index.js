@@ -8,14 +8,12 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({ bestsellersTrim, categories,brands }) {
-console.log(brands);
+export default function Home({ bestsellersTrim, categories }) {
   return (
     <>
       <Hero />
       <Bestsellers data={bestsellersTrim} />
       <TopCategories data={categories} />
-      <TopBrands data={brands}/>
     </>
   );
 }
@@ -34,18 +32,15 @@ export async function getServerSideProps(context) {
   const bestsellersTrim = bestSellers.slice(0, 15);
 
   const categories = new Set([]);
-  const brands = new Set([]);
-  
+
   products.map((p) => {
-    brands.add(p.brand)
     categories.add(p.category);
   });
-  console.log(brands);
-  
+
   return {
-    props: { 
+    props: {
       bestsellersTrim,
-      categories:Array.from(categories).slice(0,6),
-      brands:Array.from(brands).slice(0,6),}
+      categories: Array.from(categories).slice(0, 6),
+    },
   };
 }

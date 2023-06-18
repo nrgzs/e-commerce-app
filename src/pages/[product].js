@@ -2,7 +2,7 @@ import AddToCartBtn from '@/components/addToCartBtn';
 import Image from 'next/image';
 
 Image;
-export default function CategoriePage({ item }) {
+export default function ProductPage({ item }) {
   return (
     <>
       <div>
@@ -30,11 +30,12 @@ export async function getServerSideProps(context) {
   const { product } = context.params;
   const { category } = context.params;
 
-  const { products } = await import('../../../../data/products.json');
+  const { products } = await import('../../data/products.json');
 
   const item = products.find(
-    (item) => item.id === Number(product) && item.category === category
+    (item) => item.id === Number(product)
   );
+  console.log("🚀 ~ file: [product].js:38 ~ getServerSideProps ~ item:", item)
 
   return {
     props: {
