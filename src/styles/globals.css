@@ -13,8 +13,9 @@ body {
 
 .hero {
   background-repeat: no-repeat;
-  height: 60vh;
-  background-size:cover,
+  height: 90vh;
+  background-size:cover;
+  background-position: center;
   
 }
 

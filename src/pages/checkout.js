@@ -23,11 +23,11 @@ export default function CartPage() {
   
 
   return (
-    <div>
+    <div className=" h-screen">
       <h2>Your Bag</h2>
-       <p>items in your bag : {cart.amount}</p>
-      <p> TOTAL : {cart.total}</p> 
-      <div>
+      <p>items in your bag : {cart.amount}</p>
+      <p> TOTAL : {cart.total}</p>
+      <div className=''>
         {cart.cartItems.map((item) => {
           return (
             <div key={item.id}>
@@ -40,7 +40,7 @@ export default function CartPage() {
                 onClick={() => {
                   dispatch(removeItem(item.id));
                 }}
-                className=" bg-orange-400 p-2 m-2"
+                className=" bg-orange-400 p-2 m-2 text-white rounded "
               >
                 REMOVE
               </button>
@@ -48,7 +48,7 @@ export default function CartPage() {
                 onClick={() => {
                   dispatch(increase(item.id));
                 }}
-                className=" bg-orange-400 p-2 m-2"
+                className=" bg-orange-400 p-2 m-2  text-white rounded "
               >
                 INCREASE
               </button>
@@ -58,7 +58,7 @@ export default function CartPage() {
                     dispatch(decrease(item.id));
                   }
                 }}
-                className=" bg-orange-400 p-2 m-2"
+                className=" bg-orange-400 p-2 m-2 text-white rounded"
               >
                 DECREASE
               </button>
@@ -70,7 +70,7 @@ export default function CartPage() {
         onClick={() => {
           dispatch(clearCart());
         }}
-        className=" bg-orange-400 p-2 m-2"
+        className=" bg-orange-400 p-2 m-2 text-white rounded"
       >
         CLEAR
       </button>

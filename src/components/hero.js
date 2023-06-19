@@ -36,7 +36,7 @@ export default function Hero() {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+     
     >
       <SwiperSlide>
         <div className="hero hero-1 text-gray-200 text-center font-bold text-3xl relative">

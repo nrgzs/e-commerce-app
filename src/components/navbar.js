@@ -6,8 +6,6 @@ import { useRef, useState } from 'react';
 import SearchBar from './searchbar';
 import Link from 'next/link';
 
-
-
 export default function Navbar() {
   const [booleanMenu, setbooleanMenu] = useState(false);
 
@@ -101,7 +99,9 @@ export default function Navbar() {
 
       <div className="flex p-5 justify-center items-center">
         <SearchBar />
-        <Image src={heart} alt="heart icon" width={37} height={37}></Image>
+        <a href="/wishlist">
+          <Image src={heart} alt="heart icon" width={37} height={37}></Image>
+        </a>
         <a href="/checkout">
           <Image src={cart} alt="cart icon" width={50} height={50}></Image>
         </a>
