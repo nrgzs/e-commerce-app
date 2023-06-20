@@ -5,27 +5,29 @@ import { useEffect } from 'react';
 
 export default function WishlistPage() {
   const saves = useSelector((store) => store.saves);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   console.log(saves.savedItems);
   console.log(saves.amount);
-useEffect(() => {
-  dispatch(saveAmount());
-}, [saves.savedItems]);
+  useEffect(() => {
+    dispatch(saveAmount());
+  }, [saves]);
 
   return (
     <div>
       <h2>Wishlist</h2>
       <h2>{saves.amount}</h2>
       {saves.savedItems.map((item) => {
-       return <Card
-          category={`products/${item.category}`}
-          id={item.id}
-          img={item.images[0]}
-          title={item.title}
-          description={item.description}
-          price={item.price}
-          rating={item.rating}
-        />;
+        return (
+          <Card
+            category={`products/${item.category}`}
+            id={item.id}
+            img={item.images[0]}
+            title={item.title}
+            description={item.description}
+            price={item.price}
+            rating={item.rating}
+          />
+        );
       })}
     </div>
   );

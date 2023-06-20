@@ -17,22 +17,19 @@ const savedSlice = createSlice({
 
       if (!itemInSaves) {
         state.savedItems.push({ ...newItem, amount: 1 });
-
-     
-
-        state.amount = amount;
       } else if (itemInSaves) {
         state.savedItems = state.savedItems.filter(
           (item) => item.id != newItem.id
         );
       }
     },
-    saveAmount:(state,action)=>{
-           let amount = 0;
-           state.savedItems.forEach((item) => {
-             amount += item.amount;
-           });
-    }
+    saveAmount: (state, action) => {
+      let amount = 0;
+      state.savedItems.forEach((item) => {
+        amount += item.amount;
+      });
+      state.amount = amount;
+    },
   },
 });
 

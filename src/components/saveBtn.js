@@ -10,7 +10,7 @@ const dispatch = useDispatch();
   function saved() {
      axios.post('/api/saves', { productId: itemId }).then((response) => {
        dispatch(toggleSave(response.data));
-       console.log(response.data);
+      
      });
   }
   return (
