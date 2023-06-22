@@ -8,6 +8,7 @@ import {
   calculateTotal,
 } from '@/redux/cart/cartSlice';
 import { useEffect } from 'react';
+import OrderRegistration from '@/components/order';
 
 export default function CartPage() {
   const dispatch = useDispatch();
@@ -23,57 +24,64 @@ export default function CartPage() {
   
 
   return (
-    <div className=" h-screen">
-      <h2>Your Bag</h2>
-      <p>items in your bag : {cart.amount}</p>
-      <p> TOTAL : {cart.total}</p>
-      <div className=''>
-        {cart.cartItems.map((item) => {
-          return (
-            <div key={item.id}>
-              {' '}
-              <button onClick={() => dispatch(addAmount())}>add amount</button>
-              <p>{item.title}</p>
-              <p>{item.price}</p>
-              <p>amount: {item.amount}</p>
-              <button
-                onClick={() => {
-                  dispatch(removeItem(item.id));
-                }}
-                className=" bg-orange-400 p-2 m-2 text-white rounded "
-              >
-                REMOVE
-              </button>
-              <button
-                onClick={() => {
-                  dispatch(increase(item.id));
-                }}
-                className=" bg-orange-400 p-2 m-2  text-white rounded "
-              >
-                INCREASE
-              </button>
-              <button
-                onClick={() => {
-                  if (item.amount > 1) {
-                    dispatch(decrease(item.id));
-                  }
-                }}
-                className=" bg-orange-400 p-2 m-2 text-white rounded"
-              >
-                DECREASE
-              </button>
-            </div>
-          );
-        })}
+    <div className="flex">
+      <div>
+        <h2>Your Bag</h2>
+        <p>items in your bag : {cart.amount}</p>
+        <p> TOTAL : {cart.total}</p>
+        <div className="">
+          {cart.cartItems.map((item) => {
+            return (
+              <div key={item.id}>
+                {' '}
+                <button onClick={() => dispatch(addAmount())}>
+                  add amount
+                </button>
+                <p>{item.title}</p>
+                <p>{item.price}</p>
+                <p>amount: {item.amount}</p>
+                <button
+                  onClick={() => {
+                    dispatch(removeItem(item.id));
+                  }}
+                  className=" bg-orange-400 p-2 m-2 text-white rounded "
+                >
+                  REMOVE
+                </button>
+                <button
+                  onClick={() => {
+                    dispatch(increase(item.id));
+                  }}
+                  className=" bg-orange-400 p-2 m-2  text-white rounded "
+                >
+                  INCREASE
+                </button>
+                <button
+                  onClick={() => {
+                    if (item.amount > 1) {
+                      dispatch(decrease(item.id));
+                    }
+                  }}
+                  className=" bg-orange-400 p-2 m-2 text-white rounded"
+                >
+                  DECREASE
+                </button>
+              </div>
+            );
+          })}
+        </div>
+        <button
+          onClick={() => {
+            dispatch(clearCart());
+          }}
+          className=" bg-orange-400 p-2 m-2 text-white rounded"
+        >
+          CLEAR
+        </button>
       </div>
-      <button
-        onClick={() => {
-          dispatch(clearCart());
-        }}
-        className=" bg-orange-400 p-2 m-2 text-white rounded"
-      >
-        CLEAR
-      </button>
+      <div>
+        <OrderRegistration/>
+      </div>
     </div>
   );
 }
