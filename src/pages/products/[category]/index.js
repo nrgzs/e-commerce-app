@@ -3,10 +3,12 @@ import Card from '@/components/productCart';
 export default function CategoriePage({ items, category }) {
   return (
     <>
-      <div className=" text-center">
-        <h2>{category} page</h2>
+      <div className=" text-center max-h-full min-h-screen mt-4">
+        <h2 className="font-bold text-2xl mb-6 text-teal-800">
+          {category.toUpperCase()} PAGE
+        </h2>
 
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap gap-6 justify-center">
           {items.map((item) => {
             return (
               <Card

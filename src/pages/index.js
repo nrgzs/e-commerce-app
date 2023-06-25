@@ -12,8 +12,8 @@ export default function Home({ bestsellersTrim, categories }) {
   return (
     <>
       <Hero />
-      <Bestsellers data={bestsellersTrim} />
       <TopCategories data={categories} />
+      <Bestsellers data={bestsellersTrim} />
     </>
   );
 }

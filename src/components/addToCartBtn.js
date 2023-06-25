@@ -28,9 +28,9 @@ export default function AddToCartBtn({  id }) {
   return (
     <button
       onClick={add}
-      className="font-mono font-bold rounded-full bg-teal-100   hover:bg-cyan-700 hover:text-white active:border-2 active:border-black "
+      className="font-mono font-bold rounded-full bg-black p-2   hover:bg-teal-800 text-white active:border-2 active:border-black "
     >
-      <h2>Add to card</h2>
+      Add to card
     </button>
   );
 }

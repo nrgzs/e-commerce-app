@@ -41,14 +41,19 @@ window.location.reload();
   }
 
   return (
-    <div>
-      <form>
-        <input ref={username} type="text" placeholder="name"></input>
-        <input ref={email} type="text" placeholder="email"></input>
-        <input ref={address} type="text" placeholder="adress"></input>
+    <form>
+      <div className="flex flex-col gap-4">
+        <input className=' bg-slate-200 p-2 rounded  w-96 outline-none' required ref={username} type="text" placeholder="name"></input>
+        <input className=' bg-slate-200 p-2 rounded  w-96 outline-none' required ref={email} type="text" placeholder="email"></input>
+        <input className=' bg-slate-200 p-2 rounded  w-96 outline-none' required ref={address} type="text" placeholder="adress"></input>
 
-        <button onClick={submitOrder}>Submit Order</button>
-      </form>
-    </div>
+        <button
+          className="font-mono font-bold rounded-full bg-black p-2   hover:bg-teal-800 text-white active:border-2 active:border-black"
+          onClick={submitOrder}
+        >
+          Submit Order
+        </button>
+      </div>
+    </form>
   );
 }

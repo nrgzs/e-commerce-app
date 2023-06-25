@@ -1,26 +1,34 @@
 import AddToCartBtn from '@/components/addToCartBtn';
+import SaveBtn from '@/components/saveBtn';
 import Image from 'next/image';
+
 
 Image;
 export default function ProductPage({ item }) {
   return (
     <>
-      <div>
-        <Image
-          src={item.images[0]}
-          alt="item img"
-          width={300}
-          height={300}
-        ></Image>
+      <div className="max-h-full min-h-screen flex gap-6">
         <div>
-          <h2>{item.title}</h2>
-          <p>{item.brand}</p>
-          <p>{item.description}</p>
-          <p>{item.price}</p>
-          <p>{item.rating}</p>
-          <p>{item.stock}</p>
+          <Image
+            src={item.images[0]}
+            alt="item img"
+            width={400}
+            height={400}
+          ></Image>
         </div>
-        <AddToCartBtn id={item.id} />
+        <div className=" flex flex-col gap-6 flex-grow-0">
+          <h2 className="font-bold text-2xl text-teal-800">{item.title}</h2>
+          <p className="font-bold ">{item.brand}</p>
+          <p>{item.description}</p>
+          <p>Price: {item.price}</p>
+          <p>Rating {item.rating}</p>
+          
+          <div className='relative w-44'>
+        
+            <AddToCartBtn id={item.id} />
+            <SaveBtn itemId={item.id}/>
+          </div>
+        </div>
       </div>
     </>
   );

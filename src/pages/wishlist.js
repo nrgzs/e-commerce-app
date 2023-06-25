@@ -13,22 +13,24 @@ export default function WishlistPage() {
   }, [saves]);
 
   return (
-    <div>
-      <h2>Wishlist</h2>
-      <h2>{saves.amount}</h2>
-      {saves.savedItems.map((item) => {
-        return (
-          <Card
-            category={`products/${item.category}`}
-            id={item.id}
-            img={item.images[0]}
-            title={item.title}
-            description={item.description}
-            price={item.price}
-            rating={item.rating}
-          />
-        );
-      })}
+    <div className="text-center max-h-full min-h-screen ">
+      <h2 className="font-bold text-2xl mb-6 text-teal-800">Wishlist</h2>
+      {/* <h2>{saves.amount}</h2> */}
+      <div className="flex flex-wrap gap-4 justify-center items-center content-center">
+        {saves.savedItems.map((item) => {
+          return (
+            <Card
+              category={`products/${item.category}`}
+              id={item.id}
+              img={item.images[0]}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              rating={item.rating}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

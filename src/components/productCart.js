@@ -8,7 +8,7 @@ export default function Card({category, id, img, title, price, description, rati
   
   return (
     <>
-      <div className=" flex flex-col relative gap-1 p-2 w-48 h-96 border-2 border-gray-300 rounded-md">
+      <div className=" flex flex-col relative gap-1 p-3 w-48  border-2 border-gray-300 rounded-md">
         <Link href={`/${id}`}>
           <div className=" w-40 h-40 overflow-clip">
             <Image src={img} alt="product img" width={480} height={340}></Image>

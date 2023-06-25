@@ -9,80 +9,82 @@ import {
 } from '@/redux/cart/cartSlice';
 import { useEffect } from 'react';
 import OrderRegistration from '@/components/order';
+import remove from '../../public/remove.svg'
+import add from '../../public/add-new.svg'
+import bin from '../../public/delete.svg'
+import Image from 'next/image';
 
 export default function CartPage() {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart);
 
   useEffect(() => {
-  
     dispatch(calculateTotal());
   }, [cart]);
 
- 
-
-  
-
   return (
-    <div className="flex">
-      <div>
-        <h2>Your Bag</h2>
-        <p>items in your bag : {cart.amount}</p>
-        <p> TOTAL : {cart.total}</p>
+    <div className=" max-h-full min-h-screen p-4">
+      <h2 className="font-bold text-2xl text-teal-800 text-center mb-3">
+        CHECKOUT
+      </h2>
+      <div className=" flex flex-col lg:flex-row gap-6 justify-center ">
         <div className="">
           {cart.cartItems.map((item) => {
             return (
-              <div key={item.id}>
-                {' '}
-                <button onClick={() => dispatch(addAmount())}>
-                  add amount
-                </button>
-                <p>{item.title}</p>
-                <p>{item.price}</p>
+              <div key={item.id} className=" border-2 m-2 p-2 w-96  ">
+                <p className="font-bold">{item.title}</p>
+                <p>{item.price} $</p>
                 <p>amount: {item.amount}</p>
-                <button
-                  onClick={() => {
-                    dispatch(removeItem(item.id));
-                  }}
-                  className=" bg-orange-400 p-2 m-2 text-white rounded "
-                >
-                  REMOVE
-                </button>
-                <button
-                  onClick={() => {
-                    dispatch(increase(item.id));
-                  }}
-                  className=" bg-orange-400 p-2 m-2  text-white rounded "
-                >
-                  INCREASE
-                </button>
-                <button
-                  onClick={() => {
-                    if (item.amount > 1) {
-                      dispatch(decrease(item.id));
-                    }
-                  }}
-                  className=" bg-orange-400 p-2 m-2 text-white rounded"
-                >
-                  DECREASE
-                </button>
+                <div className="flex">
+                  <div
+                    onClick={() => {
+                      dispatch(removeItem(item.id));
+                    }}
+                    className="bg-teal-600 cursor-pointer   p-2 m-2 text-white rounded "
+                  >
+                    <Image width={40} height={40} src={bin}></Image>
+                  </div>
+                  <div
+                    onClick={() => {
+                      dispatch(increase(item.id));
+                    }}
+                    className="  p-2 m-2 cursor-pointer  text-white rounded "
+                  >
+                    <Image width={40} height={40} src={add}></Image>
+                  </div>
+                  <div
+                    onClick={() => {
+                      if (item.amount > 1) {
+                        dispatch(decrease(item.id));
+                      }
+                    }}
+                    className="  p-2 m-2 cursor-pointer  text-white rounded"
+                  >
+                    <Image width={40} height={40} src={remove}></Image>
+                  </div>
+                </div>
               </div>
             );
           })}
+
+          <button
+            onClick={() => {
+              dispatch(clearCart());
+            }}
+            className=" bg-teal-800 p-2 m-2 text-white rounded"
+          >
+            CLEAR
+          </button>
         </div>
-        <button
-          onClick={() => {
-            dispatch(clearCart());
-          }}
-          className=" bg-orange-400 p-2 m-2 text-white rounded"
-        >
-          CLEAR
-        </button>
-      </div>
-      <div>
-        <OrderRegistration/>
+
+        <div>
+          <div className="mb-5 mt-2 border-2 border-teal-800 text-center p-2">
+            <p>items in your bag : {cart.amount}</p>
+            <p className="font-bold  text-xl"> TOTAL : {cart.total} $</p>
+          </div>
+          <OrderRegistration />
+        </div>
       </div>
     </div>
   );
 }
-

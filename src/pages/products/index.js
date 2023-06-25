@@ -4,9 +4,8 @@ import CategoryCart from '@/components/categoryCart';
 export default function CategoriePage({ categories, brands }) {
   return (
     <>
-      <div className="main">
-        <h2>All Products</h2>
-        <h2>categories</h2>
+      <div className="text-center max-h-full min-h-screen  ">
+        <h2 className="font-bold text-2xl mb-6 text-teal-800">CATEGORIES</h2>
         <div className="flex flex-wrap gap-4 justify-center items-center content-center">
           {categories.map((c) => {
             return <CategoryCart key={c} category={c} />;

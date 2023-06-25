@@ -16,9 +16,9 @@ const dispatch = useDispatch();
   return (
     <div
       onClick={saved}
-      className="absolute top-2 right-3 bg-white bg-opacity-70 rounded-full p-1 "
+      className="absolute top-2 right-3 cursor-pointer hover:bg-teal-800  bg-teal-600 bg-opacity-70 rounded p-1 "
     >
-      <Image src={save} alt="save icon"></Image>
+      <Image src={save} alt="save icon" ></Image>
     </div>
   );
 }

@@ -13,6 +13,7 @@ const router = useRouter()
   
  async function handleSearch(e) {
     e.preventDefault();
+    if(searchQuery){
    try {
      const res = await axios.get('api/srch', {
        params: { srchTxt: searchQuery },
@@ -23,29 +24,32 @@ const router = useRouter()
    } catch (error) {
     console.log(error);
    } 
-   
+   }
 
    
   }
   return (
     <>
-      <div className="flex gap-2 ">
-        <form onSubmit={handleSearch}>
-          <input
-            value={searchQuery}
-            onChange={(e)=>{setSearchQuery(e.target.value)}}
-            type="text"
-            placeholder='search...'
-            className={
-              toggle
-                ? 'mt-4 w-20 h-8  rounded-full shadow-sm hover:shadow-md focus:shadow-xl focus:2xl:w-48 overflow-hidden outline-none p-0.5'
-                : ''
-            }
-          />
+      <form onSubmit={handleSearch}>
+        <div className="flex flex-row gap-2 ">
+          <div>
+            <input
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
+              type="text"
+              placeholder="search..."
+              className={
+                toggle
+                  ? 'mt-4 w-20 h-8 bg-slate-100  rounded-full shadow-sm hover:shadow-md focus:shadow-xl focus:2xl:w-48 overflow-hidden outline-none p-1'
+                  : 'hidden'
+              }
+            />
+          </div>
           <div className="w-16 h-16">
             <button
               onClick={() => {
-               
                 settoggle((prev) => !prev);
               }}
               className="h-full"
@@ -58,8 +62,8 @@ const router = useRouter()
               ></Image>
             </button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </>
   );
 }

@@ -14,7 +14,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex bg-slate-50 justify-between items-center  p-5 h-20">
+    <div className="flex bg-white justify-between items-center  p-5 h-20 ">
       <div className="flex justify-between items-center">
         <div className="font-bold ">
           <Link href={'/'}>
@@ -63,17 +63,17 @@ export default function Navbar() {
           <div
             className={
               booleanMenu
-                ? 'absolute top-20 bg-slate-300 w-[200px] z-30'
+                ? 'absolute top-20 bg-neutral-800 text-neutral-100 w-[200px] z-30'
                 : 'hidden'
             }
           >
             <ul className="">
               <li className="border-b-black">
                 <a
-                  href="#services"
+                  href="/products"
                   className="block text-sm px-2 py-4 border-b-black border-b-2 hover:bg-blue-500 transition duration-300"
                 >
-                  Services
+                  Products
                 </a>
               </li>
               <li className="border-b-black">

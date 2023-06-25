@@ -14,8 +14,8 @@ import AddToCartBtn from './addToCartBtn';
 
 export default function Bestsellers({ data }) {
   return (
-    <div className="flex flex-col justify-center items-center mx-20 my-10 ">
-      <h2 className="font-bold text-2xl ">BestSellers</h2>
+    <div className="flex flex-col gap-6 justify-center items-center mx-20 my-10 ">
+      <h2 className="font-bold text-2xl text-teal-700 ">BestSellers</h2>
       <div className="container sm">
         <Swiper
           // install Swiper modules
