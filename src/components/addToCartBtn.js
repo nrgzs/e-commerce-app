@@ -6,22 +6,10 @@ import axios from 'axios';
 export default function AddToCartBtn({  id }) {
   
   const dispatch = useDispatch();
-  /*   const cart = useSelector((store) => store.cart);
-  console.log(item); */
-  /*  useEffect(() => {
-  
-    dispatch(addToCart(item));
-  }, [item]);
- */
-  /*  function add() {
-    dispatch(addToCart(item));
-  } */
 
   function add (){
-    console.log('🚀 ~ file: addToCartBtn.js:7 ~ AddToCartBtn ~ id:', id);
     axios.post('/api/cart', { productId: id }).then((response) => {
       dispatch(addToCart(response.data));
-      console.log(response.data);
     });}
 
 

@@ -37,7 +37,7 @@ export default function OrderRegistration() {
       .then((response) => response.data);
 dispatch(clearCart())
 window.location.reload();
-    console.log(res);
+  
   }
 
   return (

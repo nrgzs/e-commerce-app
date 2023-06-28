@@ -9,10 +9,11 @@ import {
 } from '@/redux/cart/cartSlice';
 import { useEffect } from 'react';
 import OrderRegistration from '@/components/order';
-import remove from '../../public/remove.svg'
-import add from '../../public/add-new.svg'
-import bin from '../../public/delete.svg'
+import remove from '../../public/remove.svg';
+import add from '../../public/add-new.svg';
+import bin from '../../public/delete.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function CartPage() {
   const dispatch = useDispatch();
@@ -32,7 +33,9 @@ export default function CartPage() {
           {cart.cartItems.map((item) => {
             return (
               <div key={item.id} className=" border-2 m-2 p-2 w-96  ">
-                <p className="font-bold">{item.title}</p>
+                <Link href={`/${item.id}`}>
+                  <p className="font-bold hover:text-teal-800">{item.title}</p>
+                </Link>
                 <p>{item.price} $</p>
                 <p>amount: {item.amount}</p>
                 <div className="flex">
