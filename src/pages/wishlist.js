@@ -10,7 +10,7 @@ export default function WishlistPage() {
   console.log(saves.amount);
   useEffect(() => {
     dispatch(saveAmount());
-  }, [saves]);
+  }, [saves,dispatch]);
 
   return (
     <div className="text-center max-h-full min-h-screen ">
@@ -20,6 +20,7 @@ export default function WishlistPage() {
         {saves.savedItems.map((item) => {
           return (
             <Card
+            key={item.id}
               category={`products/${item.category}`}
               id={item.id}
               img={item.images[0]}

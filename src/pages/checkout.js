@@ -21,10 +21,10 @@ export default function CartPage() {
 
   useEffect(() => {
     dispatch(calculateTotal());
-  }, [cart]);
+  }, [cart,dispatch]);
 
   return (
-    <div className=" max-h-full h-[85vh] p-4">
+    <div className=" lg:h-[85vh] p-4">
       <h2 className="font-bold text-2xl text-teal-800 text-center mb-3">
         CHECKOUT
       </h2>
@@ -45,7 +45,7 @@ export default function CartPage() {
                     }}
                     className="bg-teal-600 cursor-pointer   p-2 m-2 text-white rounded "
                   >
-                    <Image width={40} height={40} src={bin}></Image>
+                    <Image alt="img" width={40} height={40} src={bin}></Image>
                   </div>
                   <div
                     onClick={() => {
@@ -53,7 +53,7 @@ export default function CartPage() {
                     }}
                     className="  p-2 m-2 cursor-pointer  text-white rounded "
                   >
-                    <Image width={40} height={40} src={add}></Image>
+                    <Image alt="img" width={40} height={40} src={add}></Image>
                   </div>
                   <div
                     onClick={() => {
@@ -63,7 +63,12 @@ export default function CartPage() {
                     }}
                     className="  p-2 m-2 cursor-pointer  text-white rounded"
                   >
-                    <Image width={40} height={40} src={remove}></Image>
+                    <Image
+                      alt="img"
+                      width={40}
+                      height={40}
+                      src={remove}
+                    ></Image>
                   </div>
                 </div>
               </div>

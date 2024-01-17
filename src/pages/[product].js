@@ -2,7 +2,6 @@ import AddToCartBtn from '@/components/addToCartBtn';
 import SaveBtn from '@/components/saveBtn';
 import Image from 'next/image';
 
-
 Image;
 export default function ProductPage({ item }) {
   return (
@@ -36,17 +35,18 @@ export default function ProductPage({ item }) {
 export async function getServerSideProps(context) {
   const { product } = context.params;
   const { category } = context.params;
-
   const { products } = await import('../../data/products.json');
 
-  const item = products.find(
-    (item) => item.id === Number(product)
-  );
-  console.log("🚀 ~ file: [product].js:38 ~ getServerSideProps ~ item:", item)
+  const item = products.find((item) => item.id === Number(product));
+  if (!item) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
-      item: item,
+      item: item || null,
     },
   };
 }

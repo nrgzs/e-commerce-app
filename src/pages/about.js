@@ -7,7 +7,7 @@ import Image from 'next/image';
 const AboutPage = () => {
   return (
     <div className=" h-[85vh] flex lg:flex-row  items-center flex-col gap-5 mx-auto p-8">
-      <Image src={hero1} width={500} height={550}></Image>
+      <Image alt="img" src={hero1} width={500} height={550}></Image>
       <div>
         <h1 className="text-3xl font-bold mb-4">About Us</h1>
 

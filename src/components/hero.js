@@ -36,11 +36,15 @@ export default function Hero() {
       }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      /* onSwiper={(swiper) => console.log(swiper)} */
+     
     >
       <SwiperSlide>
         <div className="hero text-gray-200 text-center font-bold text-3xl ">
-          <Image className=" object-cover w-full h-full" src={hero2}></Image>
+          <Image
+            alt="img"
+            className=" object-cover w-full h-full"
+            src={hero2}
+          ></Image>
           <p className="absolute   w-72 top-1/3 drop-shadow-md">
             Sed ut perspiciatis unde omnis iste
           </p>
@@ -48,7 +52,11 @@ export default function Hero() {
       </SwiperSlide>
       <SwiperSlide>
         <div className="hero text-gray-200 text-center font-bold text-3xl">
-          <Image className=" object-fill w-full h-full" src={hero3}></Image>
+          <Image
+            alt="img"
+            className=" object-fill w-full h-full"
+            src={hero3}
+          ></Image>
           <p className="absolute   w-72 top-1/3 drop-shadow-md">
             Et exercitationem perferendis id voluptas
           </p>

@@ -12,6 +12,7 @@ export default function CategoriePage({ items, category }) {
           {items.map((item) => {
             return (
               <Card
+                key={item.id}
                 category={item.category}
                 id={item.id}
                 title={item.title}

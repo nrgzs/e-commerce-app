@@ -4,7 +4,7 @@ import { toggleSave } from '@/redux/saved/saveSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
-export default function saveBtn({ itemId }) {
+export default function SaveBtn({ itemId }) {
 const dispatch = useDispatch();
 
   function saved() {

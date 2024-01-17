@@ -4,8 +4,15 @@ import save from '../../public/save.svg';
 import AddToCartBtn from './addToCartBtn';
 import SaveBtn from './saveBtn';
 import Link from 'next/link';
-export default function Card({category, id, img, title, price, description, rating }) {
-  
+export default function Card({
+  category,
+  id,
+  img,
+  title,
+  price,
+  description,
+  rating,
+}) {
   return (
     <>
       <div className=" flex flex-col relative gap-1 p-3 w-48  border-2 border-gray-300 rounded-md">
@@ -13,12 +20,12 @@ export default function Card({category, id, img, title, price, description, rati
           <div className=" w-40 h-40 overflow-clip">
             <Image src={img} alt="product img" width={480} height={340}></Image>
           </div>
-        
-            <SaveBtn itemId={id} />
-           {/*  <div className="absolute top-2 right-3 bg-white bg-opacity-70 rounded-full p-1 ">
+
+          <SaveBtn itemId={id} />
+          {/*  <div className="absolute top-2 right-3 bg-white bg-opacity-70 rounded-full p-1 ">
               <Image src={save} alt="save icon"></Image>
             </div> */}
-         
+
           <div className="mt-2 w-35 h-40 flex flex-col ">
             <div className="">
               <h2 className="mr-auto font-mono font-bold  w-32 h-20">
@@ -35,9 +42,8 @@ export default function Card({category, id, img, title, price, description, rati
               </div>
             </div>
           </div>
-          </Link>
-          <AddToCartBtn id={id} />
-        
+        </Link>
+        <AddToCartBtn id={id} />
       </div>
     </>
   );

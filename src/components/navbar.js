@@ -2,9 +2,10 @@ import heart from './../../public/heart.svg';
 import cart from './../../public/cart.svg';
 import bars from './../../public/bars.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
-import Link from 'next/link';
+
 
 export default function Navbar() {
   const [booleanMenu, setbooleanMenu] = useState(false);
@@ -27,24 +28,24 @@ export default function Navbar() {
             <div className="flex justify-between">
               <div className="flex space-x-7">
                 <div className="hidden md:flex items-center space-x-1">
-                  <a
+                  <Link
                     href="/products"
                     className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
                   >
                     Products
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/about"
                     className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
                   >
                     About
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/contact"
                     className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -69,28 +70,28 @@ export default function Navbar() {
           >
             <ul className="">
               <li className="border-b-black">
-                <a
+                <Link
                   href="/products"
                   className="block text-sm px-2 py-4 border-b-black border-b-2 hover:bg-blue-500 transition duration-300"
                 >
                   Products
-                </a>
+                </Link>
               </li>
               <li className="border-b-black">
-                <a
+                <Link
                   href="#about"
                   className="block text-sm px-2 py-4 border-b-black border-b-2 hover:bg-blue-500 transition duration-300"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li className="border-b-black">
-                <a
+                <Link
                   href="#contact"
                   className="block text-sm px-2 py-4 border-b-black border-b-2 hover:bg-blue-500 transition duration-300"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -98,12 +99,12 @@ export default function Navbar() {
       </div>
 
       <div className="flex p-5 justify-center items-center">
-        <a href="/wishlist">
+        <Link href="/wishlist">
           <Image src={heart} alt="heart icon" width={37} height={37}></Image>
-        </a>
-        <a href="/checkout">
+        </Link>
+        <Link href="/checkout">
           <Image src={cart} alt="cart icon" width={50} height={50}></Image>
-        </a>
+        </Link>
       </div>
     </div>
   );
