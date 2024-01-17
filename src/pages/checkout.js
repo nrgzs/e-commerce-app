@@ -24,7 +24,7 @@ export default function CartPage() {
   }, [cart]);
 
   return (
-    <div className=" max-h-full min-h-screen p-4">
+    <div className=" max-h-full h-[85vh] p-4">
       <h2 className="font-bold text-2xl text-teal-800 text-center mb-3">
         CHECKOUT
       </h2>

@@ -3,7 +3,7 @@ import cart from './../../public/cart.svg';
 import bars from './../../public/bars.svg';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import SearchBar from './searchbar';
+
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -34,13 +34,13 @@ export default function Navbar() {
                     Products
                   </a>
                   <a
-                    href=""
+                    href="/about"
                     className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
                   >
                     About
                   </a>
                   <a
-                    href=""
+                    href="/contact"
                     className="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
                   >
                     Contact Us
@@ -98,7 +98,6 @@ export default function Navbar() {
       </div>
 
       <div className="flex p-5 justify-center items-center">
-        <SearchBar />
         <a href="/wishlist">
           <Image src={heart} alt="heart icon" width={37} height={37}></Image>
         </a>

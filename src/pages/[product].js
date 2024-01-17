@@ -7,7 +7,7 @@ Image;
 export default function ProductPage({ item }) {
   return (
     <>
-      <div className="max-h-full min-h-screen flex gap-6">
+      <div className=" h-[85vh] flex gap-6">
         <div>
           <Image
             src={item.images[0]}
@@ -22,11 +22,10 @@ export default function ProductPage({ item }) {
           <p>{item.description}</p>
           <p>Price: {item.price}</p>
           <p>Rating {item.rating}</p>
-          
-          <div className='relative w-44'>
-        
+
+          <div className="relative w-44">
             <AddToCartBtn id={item.id} />
-            <SaveBtn itemId={item.id}/>
+            <SaveBtn itemId={item.id} />
           </div>
         </div>
       </div>

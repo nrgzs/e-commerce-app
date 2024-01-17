@@ -1,6 +1,7 @@
-import hero1 from './../../public/heroimg1.jpg';
-import hero2 from '../../public/heroimg2.jpg';
-import hero3 from '../../public/heroimg2.jpg';
+
+
+import hero2 from '../../public/newhero.jpg';
+import hero3 from '../../public/heroimg3.jpg';
 
 import {
   Navigation,
@@ -36,21 +37,21 @@ export default function Hero() {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       /* onSwiper={(swiper) => console.log(swiper)} */
-     
     >
       <SwiperSlide>
-        <div className="hero hero-1 text-gray-200 text-center font-bold text-3xl relative">
-          <p className='absolute   w-72 top-1/3 drop-shadow-md'>Lorem ipsum dolor sit amet</p>
+        <div className="hero text-gray-200 text-center font-bold text-3xl ">
+          <Image className=" object-cover w-full h-full" src={hero2}></Image>
+          <p className="absolute   w-72 top-1/3 drop-shadow-md">
+            Sed ut perspiciatis unde omnis iste
+          </p>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="hero hero-2 text-gray-200 text-center font-bold text-3xl ">
-          <p className='absolute   w-72 top-1/3 drop-shadow-md'>Sed ut perspiciatis unde omnis iste</p>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="hero hero-2 text-gray-200 text-center font-bold text-3xl">
-          <p className='absolute   w-72 top-1/3 drop-shadow-md'>Et exercitationem perferendis id voluptas</p>
+        <div className="hero text-gray-200 text-center font-bold text-3xl">
+          <Image className=" object-fill w-full h-full" src={hero3}></Image>
+          <p className="absolute   w-72 top-1/3 drop-shadow-md">
+            Et exercitationem perferendis id voluptas
+          </p>
         </div>
       </SwiperSlide>
     </Swiper>
